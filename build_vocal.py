@@ -23,7 +23,7 @@ with open("prompts.pkl", "wb") as f:
 vocab = set()
 
 for name_prompt in tqdm(prompts):
-    with open('../vdan/grasping/robotic-grasping/data/grasp-anything/prompt/' + name_prompt, 'rb') as f:
+    with open(path_prompt + name_prompt, 'rb') as f:
         prompt, objects = pickle.load(f)
         # Add object in objects to vocab, vocab is a set
         for obj in objects:
