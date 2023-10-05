@@ -7,7 +7,7 @@ import pickle
 
 # Set path_prompt as argument for terminal
 path_prompt = sys.argv[1]
-number_sample = sys.argv[2]
+number_sample = int(sys.argv[2])
 
 # path_prompt = '/c/Users/NghiaPTIT/Downloads/grasp-anything/grasp-anything'
 # path_prompt = "C:\\Users\\NghiaPTIT\\Downloads\\grasp-anything\\grasp-anything\\prompt"
