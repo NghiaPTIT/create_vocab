@@ -23,11 +23,14 @@ with open("prompts.pkl", "wb") as f:
 vocab = set()
 
 for name_prompt in tqdm(prompts):
-    with open(path_prompt + name_prompt, 'rb') as f:
-        prompt, objects = pickle.load(f)
-        # Add object in objects to vocab, vocab is a set
-        for obj in objects:
-            vocab.add(obj)
+    try:
+        with open(path_prompt + name_prompt, 'rb') as f:
+            prompt, objects = pickle.load(f)
+            # Add object in objects to vocab, vocab is a set
+            for obj in objects:
+                vocab.add(obj)
+    except:
+        continue
 
 with open("vocab.pkl", "wb") as f:
     pickle.dump(vocab, f)
